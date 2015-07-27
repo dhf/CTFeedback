@@ -35,3 +35,13 @@
 "Error" = "Ошибка";
 
 "Mail" = "Почта";
+<<<<<<< Updated upstream
+=======
+
+"Language" = "язык";
+
+"Region" = "область";
+
+"Feedback" = "обратная связь";
+
+>>>>>>> Stashed changes

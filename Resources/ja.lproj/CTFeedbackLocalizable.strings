@@ -34,4 +34,15 @@
 
 "Error" = "エラー";
 
+<<<<<<< Updated upstream
 "Mail" = "メール";
+=======
+"Mail" = "メール";
+
+"Language" = "言語";
+
+"Region" = "地域";
+
+"Feedback" = "フィードバック";
+
+>>>>>>> Stashed changes
