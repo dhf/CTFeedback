@@ -26,8 +26,6 @@
 
 "App Info" = "Информация о приложении";
 
-"Feedback" = "Обратная связь";
-
 "Topic" = "Тема";
 
 "Topics" = "Темы";
@@ -35,13 +33,9 @@
 "Error" = "Ошибка";
 
 "Mail" = "Почта";
-<<<<<<< Updated upstream
-=======
 
 "Language" = "язык";
 
 "Region" = "область";
 
 "Feedback" = "обратная связь";
-
->>>>>>> Stashed changes
