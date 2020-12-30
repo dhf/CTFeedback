@@ -379,6 +379,8 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 
 - (void)sendButtonTapped:(id)sender
 {
+    if (![MFMailComposeViewController canSendMail]) return;
+    
     MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
     controller.mailComposeDelegate = self;
     [controller setToRecipients:self.toRecipients];
@@ -464,12 +466,11 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     if (result == MFMailComposeResultCancelled) {
         completion = nil;
     } else if (result == MFMailComposeResultFailed && error) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CTFBLocalizedString(@"Error")
-                                                        message:error.localizedDescription
-                                                       delegate:nil
-                                              cancelButtonTitle:CTFBLocalizedString(@"Dismiss")
-                                              otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:CTFBLocalizedString(@"Error")
+                                                                       message:error.localizedDescription
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction: [UIAlertAction actionWithTitle:CTFBLocalizedString(@"Dismiss") style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 
     [controller dismissViewControllerAnimated:YES completion:completion];
